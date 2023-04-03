@@ -1,47 +1,15 @@
 import json
 
-from SolarField import SolarPanel
-from OilStation import OilGenerator
-from CoalStation import CoalGenerator
-from WindFarm import WindTurbine
+# TODO: Import libraries
 
-def charge_battery(energy: dict = {}):
-
-    # Load file
-    with open(".battery", "r") as fh:
-        data = json.load(fh)
-
-    # Aggregate generated energy
-    data["solar"] += energy["solar"]
-    data["wind"] += energy["wind"]
-    data["oil"] += energy["oil"]
-    data["coal"] += energy["coal"]
-
-    # Write data
-    with open(".battery", "w") as fh:
-        json.dump(data, fh)
+# TODO: Write charge_battery function to store power generated
+#       in .battery file
 
 def main():
     
-    # Examples of renewables
-    solar_panel_1 = SolarPanel()
-    wind_turbine_1 = WindTurbine()
+    # TODO: Create power generation objects and run them
 
-    # Examples of exhaustibles
-    oil_plant = OilGenerator()
-    oil_plant.use()
-    coal_plant = CoalGenerator()
-    coal_plant.use()
-
-    # Call the charge
-    charge_battery(
-        {
-            "solar": solar_panel_1.power,
-            "wind": wind_turbine_1.power,
-            "oil": oil_plant.energy,
-            "coal": coal_plant.energy
-        }
-    )
+    # TODO: Call charge_battery to store the energy created
 
 if __name__ == "__main__":
     main()

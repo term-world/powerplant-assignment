@@ -1,7 +1,6 @@
-from resources import Wind
+# TODO: Import resource
 
-class WindTurbine(Wind):
+class WindTurbine: # TODO: Inherit Wind
 
-    def __init__(self, blade_size: int = 0):
-        self.blade_size = 115
-        super().__init__()
+    def __init__(self):
+        # TODO: Build according to README specifications
